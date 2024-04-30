@@ -40,9 +40,11 @@ body{
     border: 5px solid black;
     margin: 50px;
     border-radius: 20px;
+    display: none;
     cursor: pointer;
     overflow: hidden;
 }
+
 
 .fakeButton:hover{
     animation: coolAnimation 0.2s ease-in-out 0s 1 normal forwards;
