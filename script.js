@@ -38,11 +38,11 @@ function highlightHelpBtn(){
 }
 
 function deactivatePlayBtn(){
-    playBtn.style.animation = "coolAnimation 0.2s backwards reverse"
+    playBtn.style.animation = "coolAnimation 0.2s backwards"
 }
 
 function deactivateHelpBtn(){
-    helpBtn.style.animation = "coolAnimation 0.2s backwards reverse"
+    helpBtn.style.animation = "coolAnimation 0.2s backwards"
 }
 
 playBtn.addEventListener("mouseover", highlightPlayBtn)
