@@ -8,13 +8,15 @@
     <link rel="icon" href="assets\DragonAdventureIco.png">
 </head>
 <body>
-    <audio loop src="audio/menuAudio.mp3" id="menu_audio"></audio>
-    <audio src="audio/hoverSelection.mp3" id="hover_selection"></audio>
-    <audio src="audio/clickSelection.mp3" id="click_selection"></audio>
-    <header id="titleName">DRAGON ADVENTURE</header>
-    <div class="options">
-        <div class="fakeButton" id="playBtn" onmouseover="playHover()" onclick="playSelected()">PLAY ▶️</div>
-        <div class="fakeButton" id="helpBtn" onmouseover="playHover()" onclick="playSelected()">HELP 📖</div>
+    <div id="startscreen">
+        <audio loop src="audio/menuAudio.mp3" id="menu_audio"></audio>
+        <audio src="audio/hoverSelection.mp3" id="hover_selection"></audio>
+        <audio src="audio/clickSelection.mp3" id="click_selection"></audio>
+        <header id="titleName">DRAGON ADVENTURE</header>
+        <div class="options">
+            <div class="fakeButton" id="playBtn" onmouseover="playHover()" onclick="playSelected()">PLAY ▶️</div>
+            <div class="fakeButton" id="helpBtn" onmouseover="playHover()" onclick="playSelected()">HELP 📖</div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
