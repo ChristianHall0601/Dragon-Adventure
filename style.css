@@ -81,3 +81,42 @@ body, html{
 audio{
     display: none;
 }
+
+#helpscreen{
+    display:none;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(180deg, #0D150C, yellow);
+    font-family: "MedievalSharp", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#backBtn{
+    text-align: center;
+    padding: 20px;
+    font-size: 40;
+    color: white;
+    background-color: #ff0000;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    border: 5px solid #ff0000;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}
+
+#backBtn:hover{
+    background-color: #FF69B4;
+    border: 5px solid #FF69B4;
+    transform: rotate(360deg);
+    cursor: pointer;
+    transition: 0.5s
+}
+
+#backstory{
+    text-align: center;
+    font-size: 40;
+    padding-top: 200px;
+}
