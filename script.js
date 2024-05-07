@@ -5,16 +5,20 @@ clickSelection = document.getElementById("click_selection");
 chooseWiselySong = document.getElementById("choose_wisely");
 
 //btns
+understandBtn = document.getElementById("understand")
 fakeBtns = document.getElementsByClassName("fakeButton");
 playBtn = document.getElementById("playBtn");
 helpBtn = document.getElementById("helpBtn");
 backBtn = document.getElementById("backBtn");
 
 //screens
+warningScreen = document.getElementById("warning");
 startScreen = document.getElementById("startscreen");
 helpScreen = document.getElementById("helpscreen");
 caveScreen = document.getElementById("chooseCave");
 titleName = document.getElementById("titleName");
+darknessScreen = document.getElementById("light");
+var pos = document.documentElement;
 
 //Functions
 function playHover(){
@@ -24,12 +28,6 @@ function playHover(){
 
 function playSelected(){
     clickSelection.play();
-}
-
-function playMain(){
-    menuSong.volume = 0.5
-    //menuSong.play();
-    setTimeout(showMyStartBtns, 1000)
 }
 
 function showMyStartBtns(){
@@ -53,6 +51,7 @@ function helperSwticherTH(){
 function helperSwitcherTP(){
     startScreen.style.display = "none"
     caveScreen.style.display = "block";
+    darknessScreen.style.display = "block";
     menuSong.pause()
     chooseWiselySong.play()
 }
@@ -85,6 +84,19 @@ function switchToCaveScreen(){
     helpBtn.style.animation = "buttonOnOpen 0.5s reverse forwards";
     setTimeout(helperSwitcherTP, 2000);
 }
+
+function switchToMainScreenWM(){
+    setTimeout(switchToMainScreenHelperWM, 2000)
+}
+
+function switchToMainScreenHelperWM(){
+    warningScreen.style.display = "none";
+    startScreen.style.display = "block";
+    menuSong.volume = 0.5
+    menuSong.play();
+    setTimeout(showMyStartBtns, 1000)
+}
+
 playBtn.addEventListener("mouseover", highlightPlayBtn)
 playBtn.addEventListener("mouseout", deactivatePlayBtn)
 helpBtn.addEventListener("mouseover", highlightHelpBtn)
@@ -92,7 +104,10 @@ helpBtn.addEventListener("mouseout", deactivateHelpBtn)
 helpBtn.addEventListener("click", switchToHelpScreen)
 backBtn.addEventListener("click", switchToMainScreen)
 playBtn.addEventListener("click", switchToCaveScreen)
-
-window.onload = playMain();
+understandBtn.addEventListener("click", switchToMainScreenWM)
+pos.addEventListener("mousemove", e =>{
+    pos.style.setProperty("--x", e.clientX + "px")
+    pos.style.setProperty("--y", e.clientY + "px")
+})
 
 

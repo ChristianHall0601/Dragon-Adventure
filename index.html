@@ -12,7 +12,7 @@
         <h1>WARNING!</h1>
         <p>This is indeed a horror game with flashing lights, loud noises, and jumpscares!<br>
         Do not get upset when you do get jumpscared. (skill issue imo)</p>
-        <div id="understand" onmouseover="playHover()">I understand</div>
+        <div id="understand" onmouseover="playHover()" onclick="playSelected()">I understand</div>
     </div>
     <div id="startscreen">
         <audio loop src="audio/menuAudio.mp3" id="menu_audio"></audio>
@@ -41,6 +41,7 @@
 
         </div>
     </div>
+    <div id="light"></div>
     <script src="script.js"></script>
 </body>
 </html>
