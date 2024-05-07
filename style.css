@@ -1,14 +1,15 @@
 body, html{
-    margin:0
-}
-
-#startscreen{
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(180deg, #0D150C, yellow);
+    margin:0;
     font-family: "MedievalSharp", cursive;
     font-weight: 400;
     font-style: normal;
+}
+
+#startscreen{
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(180deg, #0D150C, yellow);
 }
 #titleName{
     padding-top: 50px;
@@ -87,9 +88,6 @@ audio{
     height: 100%;
     width: 100%;
     background-image: linear-gradient(180deg, #0D150C, yellow);
-    font-family: "MedievalSharp", cursive;
-    font-weight: 400;
-    font-style: normal;
 }
 
 #backBtn{
@@ -112,11 +110,57 @@ audio{
     border: 5px solid #FF69B4;
     transform: rotate(360deg);
     cursor: pointer;
-    transition: 0.5s
+    transition: 0.2s
 }
 
 #backstory{
     text-align: center;
     font-size: 40;
     padding-top: 200px;
+}
+
+#chooseCave{
+    width: 100%;
+    height: 100%;
+    background-image : url("assets/branchedCaves.jpg");
+    background-repeat : no-repeat;
+    background-size : 100% 100%;
+    display : none
+}
+
+#warning{
+    color : #ff0000;
+    width : 100%;
+    height : 100%;
+    background-color : #000;
+    justify-content : center;
+    text-align : center;
+    position: relative;
+}
+
+#warning h1{
+    padding-top : 200px;
+    padding-bottom:100px;
+}
+
+#understand{
+    color: #fff;
+    border: solid 5px #fff;
+    border-radius:20px;
+    padding: 50px;
+    width: 200px;
+    margin: auto;
+    margin-top: 200px;
+    opacity: 0%;
+    animation: warningAnimaiton 1s 5s forwards;
+}
+
+@keyframes warningAnimaiton{
+    100%{
+        opacity: 100%;
+    }
+}
+
+#understand:hover{
+    cursor : pointer;
 }

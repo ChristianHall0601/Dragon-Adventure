@@ -2,6 +2,7 @@
 menuSong = document.getElementById("menu_audio");
 hoverSelection = document.getElementById("hover_selection");
 clickSelection = document.getElementById("click_selection");
+chooseWiselySong = document.getElementById("choose_wisely");
 
 //btns
 fakeBtns = document.getElementsByClassName("fakeButton");
@@ -12,6 +13,7 @@ backBtn = document.getElementById("backBtn");
 //screens
 startScreen = document.getElementById("startscreen");
 helpScreen = document.getElementById("helpscreen");
+caveScreen = document.getElementById("chooseCave");
 titleName = document.getElementById("titleName");
 
 //Functions
@@ -26,7 +28,7 @@ function playSelected(){
 
 function playMain(){
     menuSong.volume = 0.5
-    menuSong.play();
+    //menuSong.play();
     setTimeout(showMyStartBtns, 1000)
 }
 
@@ -40,18 +42,19 @@ function showMyStartBtns(){
 function switchToHelpScreen(){
     titleName.style.animation = "buttonOnOpen 0.5s reverse forwards";
     playBtn.style.animation = "buttonOnOpen 0.5s reverse forwards";
-    setTimeout(helpBtnDissappear, 400);
-    setTimeout(helperSwticherTH, 2000);
-    
-}
-
-function helpBtnDissappear(){
-    helpBtn.style.animation = "buttonOnOpen 0.5 reverse forwards"
+    setTimeout(helperSwticherTH, 2000);   
 }
 
 function helperSwticherTH(){
     startScreen.style.display = "none"
     helpScreen.style.display = "block";
+}
+
+function helperSwitcherTP(){
+    startScreen.style.display = "none"
+    caveScreen.style.display = "block";
+    menuSong.pause()
+    chooseWiselySong.play()
 }
 
 function highlightPlayBtn(){
@@ -77,12 +80,18 @@ function switchToMainScreen(){
     playBtn.style.animation = "buttonOnOpen 0.2s forwards";
 }
 
+function switchToCaveScreen(){
+    titleName.style.animation = "buttonOnOpen 0.5s reverse forwards";
+    helpBtn.style.animation = "buttonOnOpen 0.5s reverse forwards";
+    setTimeout(helperSwitcherTP, 2000);
+}
 playBtn.addEventListener("mouseover", highlightPlayBtn)
 playBtn.addEventListener("mouseout", deactivatePlayBtn)
 helpBtn.addEventListener("mouseover", highlightHelpBtn)
 helpBtn.addEventListener("mouseout", deactivateHelpBtn)
 helpBtn.addEventListener("click", switchToHelpScreen)
 backBtn.addEventListener("click", switchToMainScreen)
+playBtn.addEventListener("click", switchToCaveScreen)
 
 window.onload = playMain();
 

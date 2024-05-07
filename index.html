@@ -8,10 +8,17 @@
     <link rel="icon" href="assets\DragonAdventureIco.png">
 </head>
 <body>
+    <div id="warning">
+        <h1>WARNING!</h1>
+        <p>This is indeed a horror game with flashing lights, loud noises, and jumpscares!<br>
+        Do not get upset when you do get jumpscared. (skill issue imo)</p>
+        <div id="understand" onmouseover="playHover()">I understand</div>
+    </div>
     <div id="startscreen">
         <audio loop src="audio/menuAudio.mp3" id="menu_audio"></audio>
         <audio src="audio/hoverSelection.mp3" id="hover_selection"></audio>
         <audio src="audio/clickSelection.mp3" id="click_selection"></audio>
+        <audio loop src="audio/chooseWisely.mp3" id="choose_wisely"></audio>
         <header id="titleName">DRAGON ADVENTURE</header>
         <div class="options">
             <div class="fakeButton" id="playBtn" onmouseover="playHover()" onclick="playSelected()">PLAY ▶️</div>
@@ -25,6 +32,14 @@
                           the dragon's stache of gold, but be careful down the other<br>
                           is a hungry dragon that will eat you on sight... Choose<br>
                           wisely adventurer</p>
+    </div>
+    <div id="chooseCave">
+        <div class="caveOption" id="correct">
+
+        </div>
+        <div class="caveOption" id="incorrect">
+
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
