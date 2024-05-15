@@ -10,6 +10,7 @@ fakeBtns = document.getElementsByClassName("fakeButton");
 playBtn = document.getElementById("playBtn");
 helpBtn = document.getElementById("helpBtn");
 backBtn = document.getElementById("backBtn");
+chooseCave = document.getElementById("chooseCave");
 
 //screens
 warningScreen = document.getElementById("warning");
@@ -54,6 +55,7 @@ function helperSwitcherTP(){
     darknessScreen.style.display = "block";
     menuSong.pause()
     chooseWiselySong.play()
+    shuffleCaves()
 }
 
 function highlightPlayBtn(){
@@ -95,6 +97,34 @@ function switchToMainScreenHelperWM(){
     menuSong.volume = 0.5
     menuSong.play();
     setTimeout(showMyStartBtns, 1000)
+}
+
+function shuffleCaves(){
+    var goodChoice = document.createElement("div");
+    var badChoice = document.createElement("div");
+    var order = Math.floor(Math.random()*2)
+    goodChoice.className = "caveOption";
+    badChoice.className = "caveOption";
+    goodChoice.id = "correct";
+    badChoice.id = "incorrect";
+    goodChoice.addEventListener("click", good)
+    badChoice.addEventListener("click", bad)
+    if (order == 0){
+        chooseCave.appendChild(goodChoice);
+        chooseCave.appendChild(badChoice);
+    }
+    else{
+        chooseCave.appendChild(badChoice);
+        chooseCave.appendChild(goodChoice);
+    }
+}
+
+function good(){
+    alert("I work! good")
+}
+
+function bad(){
+    alert("I work! bad")
 }
 
 playBtn.addEventListener("mouseover", highlightPlayBtn)

@@ -175,3 +175,18 @@ audio{
     pointer-events:none;
     background: radial-gradient(circle at var(--x) var(--y), transparent 10%, rgba(0,0,0,0.95) 20%);
 }
+
+#objective{
+    color: #ffffff;
+    text-align: center;
+    font-size: 40px;
+    position: relative;
+    top:90%
+}
+
+.caveOption{
+    width:50%;
+    height: 100%;
+    float: left;
+    cursor: pointer;
+}
