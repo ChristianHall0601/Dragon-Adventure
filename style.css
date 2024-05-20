@@ -210,6 +210,11 @@ audio{
 
 #oogaBooga{
     display:none;
+    width: 100%;
+    height: 100%;
+    background-image : url("assets/itsTheDragon.png");
+    background-repeat : no-repeat;
+    background-size : 100% 100%;
 }
 
 #youLost{
@@ -218,6 +223,11 @@ audio{
 
 #payDay{
     display:none;
+    width: 100%;
+    height: 100%;
+    background-image : url("assets/goldRoom.png");
+    background-repeat : no-repeat;
+    background-size : 100% 100%;
 }
 
 #youWin{

@@ -4,6 +4,8 @@ hoverSelection = document.getElementById("hover_selection");
 clickSelection = document.getElementById("click_selection");
 chooseWiselySong = document.getElementById("choose_wisely");
 anxietySong = document.getElementById("the_anxiety");
+jumpscareSound = document.getElementById("ooga_booga");
+payDaySound = document.getElementById("pay_day");
 
 //btns
 understandBtn = document.getElementById("understand")
@@ -21,6 +23,8 @@ caveScreen = document.getElementById("chooseCave");
 titleName = document.getElementById("titleName");
 darknessScreen = document.getElementById("light");
 anxietyScreen = document.getElementById("hopeYoureRight");
+payDayScreen = document.getElementById("payDay");
+oogaBoogaScreen = document.getElementById("oogaBooga");
 var pos = document.documentElement;
 
 
@@ -140,10 +144,21 @@ function ohTheAnxiety(){
 
 function good(){
     ohTheAnxiety()
+    setTimeout(()=>{
+        anxietyScreen.style.display = "none";
+        payDayScreen.style.display = "block";
+        anxietySong.currentTime = 0
+        payDaySound.play()}, 35000)
 }
 
 function bad(){
     ohTheAnxiety()
+    setTimeout(()=>{
+        anxietyScreen.style.display = "none";
+        oogaBoogaScreen.style.display = "block"
+        anxietySong.currentTime = 0
+        jumpscareSound.play()}, 35000
+        )
 }
 
 playBtn.addEventListener("mouseover", highlightPlayBtn)
