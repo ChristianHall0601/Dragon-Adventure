@@ -3,6 +3,7 @@ menuSong = document.getElementById("menu_audio");
 hoverSelection = document.getElementById("hover_selection");
 clickSelection = document.getElementById("click_selection");
 chooseWiselySong = document.getElementById("choose_wisely");
+anxietySong = document.getElementById("the_anxiety");
 
 //btns
 understandBtn = document.getElementById("understand")
@@ -19,7 +20,12 @@ helpScreen = document.getElementById("helpscreen");
 caveScreen = document.getElementById("chooseCave");
 titleName = document.getElementById("titleName");
 darknessScreen = document.getElementById("light");
+anxietyScreen = document.getElementById("hopeYoureRight");
 var pos = document.documentElement;
+
+
+//text
+anxietyTexts = document.getElementsByClassName("anxietyTxt");
 
 //Functions
 function playHover(){
@@ -119,12 +125,25 @@ function shuffleCaves(){
     }
 }
 
+function ohTheAnxiety(){
+    caveScreen.style.display = "none";
+    darknessScreen.style.display = "none";
+    anxietyScreen.style.display = "block";
+    chooseWiselySong.pause();
+    chooseWiselySong.currentTime = 0;
+    anxietySong.play()
+    for(let i=0; i<anxietyTexts.length; i++){
+        setTimeout(()=>{anxietyTexts[i].style.animation = "anxietyAnimation 5s forwards"
+    anxietyTexts[i].style.display = "block"}, i*5000)
+    }
+}
+
 function good(){
-    alert("I work! good")
+    ohTheAnxiety()
 }
 
 function bad(){
-    alert("I work! bad")
+    ohTheAnxiety()
 }
 
 playBtn.addEventListener("mouseover", highlightPlayBtn)
@@ -139,5 +158,4 @@ pos.addEventListener("mousemove", e =>{
     pos.style.setProperty("--x", e.clientX + "px")
     pos.style.setProperty("--y", e.clientY + "px")
 })
-
 
