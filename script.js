@@ -6,6 +6,8 @@ chooseWiselySong = document.getElementById("choose_wisely");
 anxietySong = document.getElementById("the_anxiety");
 jumpscareSound = document.getElementById("ooga_booga");
 payDaySound = document.getElementById("pay_day");
+youWinSong = document.getElementById("you_win");
+youLostSong = document.getElementById("you_lost");
 
 //btns
 understandBtn = document.getElementById("understand")
@@ -14,6 +16,8 @@ playBtn = document.getElementById("playBtn");
 helpBtn = document.getElementById("helpBtn");
 backBtn = document.getElementById("backBtn");
 chooseCave = document.getElementById("chooseCave");
+tryAgainBtn = document.getElementById("tryAgain");
+playAgainBtn = document.getElementById("playAgain");
 
 //screens
 warningScreen = document.getElementById("warning");
@@ -25,6 +29,8 @@ darknessScreen = document.getElementById("light");
 anxietyScreen = document.getElementById("hopeYoureRight");
 payDayScreen = document.getElementById("payDay");
 oogaBoogaScreen = document.getElementById("oogaBooga");
+youWinScreen = document.getElementById("youWin");
+youLostScreen = document.getElementById("youLost");
 var pos = document.documentElement;
 
 
@@ -130,6 +136,9 @@ function shuffleCaves(){
 }
 
 function ohTheAnxiety(){
+    while (chooseCave.firstChild){
+        chooseCave.removeChild(chooseCave.firstChild);
+    }
     caveScreen.style.display = "none";
     darknessScreen.style.display = "none";
     anxietyScreen.style.display = "block";
@@ -149,6 +158,14 @@ function good(){
         payDayScreen.style.display = "block";
         anxietySong.currentTime = 0
         payDaySound.play()}, 35000)
+    setTimeout(()=>{
+        payDaySound.pause();
+        payDaySound.currentTime = 0;
+        youWinSong.play()
+        payDayScreen.style.display = "none";
+        youWinScreen.style.display = "block";
+        resetAnxietyText();
+    }, 37000);
 }
 
 function bad(){
@@ -156,9 +173,44 @@ function bad(){
     setTimeout(()=>{
         anxietyScreen.style.display = "none";
         oogaBoogaScreen.style.display = "block"
-        anxietySong.currentTime = 0
+        anxietySong.currentTime = 0;
         jumpscareSound.play()}, 35000
-        )
+        );
+    setTimeout(()=>{
+        oogaBoogaScreen.style.display = "none";
+        youLostScreen.style.display = "block";
+        jumpscareSound.pause();
+        jumpscareSound.currentTime = 0;
+        youLostSong.play();
+        resetAnxietyText();
+    }, 37000);
+}
+
+function resetAnxietyText(){
+    for (let i=0; i<anxietyTexts.length; i++){
+        anxietyTexts[i].style.animation = "none";
+        anxietyTexts[i].style.display = "none";
+    }
+}
+
+function switchToCaveScreenLC(){
+    youLostSong.pause();
+    youLostSong.currentTime = 0;
+    youLostScreen.style.display = "none";
+    caveScreen.style.display = "block";
+    darknessScreen.style.display="block";
+    chooseWiselySong.play();
+    shuffleCaves();
+}
+
+function switchToCaveScreenWC(){
+    youWinSong.pause();
+    youWinSong.currentTime = 0;
+    youWinScreen.style.display = "none";
+    caveScreen.style.display = "block";
+    darknessScreen.style.display="block";
+    chooseWiselySong.play();
+    shuffleCaves();
 }
 
 playBtn.addEventListener("mouseover", highlightPlayBtn)
@@ -169,6 +221,8 @@ helpBtn.addEventListener("click", switchToHelpScreen)
 backBtn.addEventListener("click", switchToMainScreen)
 playBtn.addEventListener("click", switchToCaveScreen)
 understandBtn.addEventListener("click", switchToMainScreenWM)
+tryAgainBtn.addEventListener("click", switchToCaveScreenLC)
+playAgainBtn.addEventListener("click", switchToCaveScreenWC)
 pos.addEventListener("mousemove", e =>{
     pos.style.setProperty("--x", e.clientX + "px")
     pos.style.setProperty("--y", e.clientY + "px")

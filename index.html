@@ -22,6 +22,8 @@
         <audio src="audio/theAnxiety.mp3" id="the_anxiety"></audio>
         <audio src="audio/jumpscareSound.mp3" id="ooga_booga"></audio>
         <audio src="audio/youDidntDie.mp3" id="pay_day"></audio>
+        <audio src="audio/winnerChickenDinner.mp3" id="you_win"></audio>
+        <audio src="audio/gameOver.mp3" id="you_lost"></audio>
         <header id="titleName">DRAGON ADVENTURE</header>
         <div class="options">
             <div class="fakeButton" id="playBtn" onmouseover="playHover()" onclick="playSelected()">PLAY ▶️</div>
@@ -54,12 +56,14 @@
     <div id="youLost">
         <h2>You Died!</h2>
         <div>The dragon ate you</div>
+        <div id="tryAgain" onmousemove="playHover()">Try Again?</div>
     </div>
     <div id="payDay">
     </div>
     <div id="youWin">
         <h2>You Won!</h2>
         <div>The dragon's gold is your's</div>
+        <div id="playAgain" onmouseover="playHover()">Play Again?</div>
     </div>
     <script src="script.js"></script>
 </body>

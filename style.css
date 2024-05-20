@@ -215,10 +215,27 @@ audio{
     background-image : url("assets/itsTheDragon.png");
     background-repeat : no-repeat;
     background-size : 100% 100%;
+    animation : jumpscareAnimation 2s infinite;
 }
 
 #youLost{
     display:none;
+    background-color: #000;
+    width:100%;
+    height:100%;
+    color: #fff;
+    text-align:center;
+    font-size: 200%;
+}
+
+#youLost h2{
+    position:relative;
+    top:30%
+}
+
+#youLost div{
+    position:relative;
+    top:30%
 }
 
 #payDay{
@@ -232,6 +249,50 @@ audio{
 
 #youWin{
     display:none;
+    background-color: #000;
+    width:100%;
+    height:100%;
+    color: #fff;
+    text-align:center;
+    font-size: 200%;
+}
+
+#youWin h2{
+    position:relative;
+    top:30%
+}
+
+#youWin div{
+    position:relative;
+    top:30%
+}
+
+#tryAgain{
+    color: #fff;
+    border: solid 5px #fff;
+    border-radius:20px;
+    padding: 50px;
+    width: 200px;
+    margin: auto;
+    margin-top: 200px;
+}
+
+#tryAgain:hover{
+    cursor:pointer;
+}
+
+#playAgain{
+    color: #fff;
+    border: solid 5px #fff;
+    border-radius:20px;
+    padding: 50px;
+    width: 200px;
+    margin: auto;
+    margin-top: 200px;
+}
+
+#playAgain:hover{
+    cursor:pointer;
 }
 
 @keyframes anxietyAnimation{
@@ -247,4 +308,20 @@ audio{
     100%{
         transform:translateY(-10000%)
     }
+}
+
+@keyframes jumpscareAnimation{
+    10%{
+        transform:rotate(10deg);
+        transform:scale(1.5)
+    }
+    20%{
+        transform:rotate(-10deg);
+        transform:scale(1.3);
+    }
+    50%{
+        transform:rotate(0deg);
+        transform:scale(1.7);
+    }
+    100%{transform:scale(1.2)};
 }
