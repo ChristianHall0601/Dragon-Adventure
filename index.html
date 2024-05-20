@@ -8,15 +8,62 @@
     <link rel="icon" href="assets\DragonAdventureIco.png">
 </head>
 <body>
+    <div id="warning">
+        <h1>WARNING!</h1>
+        <p>This is indeed a horror game with flashing lights, loud noises, and jumpscares!<br>
+        Do not get upset when you do get jumpscared. (skill issue imo)</p>
+        <div id="understand" onmouseover="playHover()" onclick="playSelected()">I understand</div>
+    </div>
     <div id="startscreen">
         <audio loop src="audio/menuAudio.mp3" id="menu_audio"></audio>
         <audio src="audio/hoverSelection.mp3" id="hover_selection"></audio>
         <audio src="audio/clickSelection.mp3" id="click_selection"></audio>
+        <audio loop src="audio/chooseWisely.mp3" id="choose_wisely"></audio>
+        <audio src="audio/theAnxiety.mp3" id="the_anxiety"></audio>
+        <audio src="audio/jumpscareSound.mp3" id="ooga_booga"></audio>
+        <audio src="audio/youDidntDie.mp3" id="pay_day"></audio>
+        <audio src="audio/winnerChickenDinner.mp3" id="you_win"></audio>
+        <audio src="audio/gameOver.mp3" id="you_lost"></audio>
         <header id="titleName">DRAGON ADVENTURE</header>
         <div class="options">
             <div class="fakeButton" id="playBtn" onmouseover="playHover()" onclick="playSelected()">PLAY ▶️</div>
             <div class="fakeButton" id="helpBtn" onmouseover="playHover()" onclick="playSelected()">HELP 📖</div>
         </div>
+    </div>
+    <div id="helpscreen">
+        <div id="backBtn" onmouseover="playHover()">⇦</div>
+        <p id="backstory">You are an adventurer in a land full of dragons, you are<br>
+                          deep in a cave and are met with two paths, down one is<br>
+                          the dragon's stache of gold, but be careful down the other<br>
+                          is a hungry dragon that will eat you on sight... Choose<br>
+                          wisely adventurer</p>
+    </div>
+    <div id="chooseCave">
+    </div>
+    <div id="light">
+        <div id="objective">Objective: pick a cave</div>
+    </div>
+    <div id="hopeYoureRight">
+        <div class="anxietyTxt">You're feeling kind of brave...</div>
+        <div class="anxietyTxt">You're going down the cave...</div>
+        <div class="anxietyTxt">The air is getting cold...</div>
+        <div class="anxietyTxt">But you're feeling pretty bold...</div>
+        <div class="anxietyTxt">You see a light at the other end...</div>
+        <div class="anxietyTxt">You make your final descend...</div>
+    </div>
+    <div id="oogaBooga">
+    </div>
+    <div id="youLost">
+        <h2>You Died!</h2>
+        <div>The dragon ate you</div>
+        <div id="tryAgain" onmousemove="playHover()">Try Again?</div>
+    </div>
+    <div id="payDay">
+    </div>
+    <div id="youWin">
+        <h2>You Won!</h2>
+        <div>The dragon's gold is your's</div>
+        <div id="playAgain" onmouseover="playHover()">Play Again?</div>
     </div>
     <script src="script.js"></script>
 </body>

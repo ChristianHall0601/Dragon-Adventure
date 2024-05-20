@@ -1,14 +1,15 @@
 body, html{
-    margin:0
-}
-
-#startscreen{
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(180deg, #0D150C, yellow);
+    margin:0;
     font-family: "MedievalSharp", cursive;
     font-weight: 400;
     font-style: normal;
+}
+
+#startscreen{
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(180deg, #0D150C, yellow);
 }
 #titleName{
     padding-top: 50px;
@@ -80,4 +81,247 @@ body, html{
 
 audio{
     display: none;
+}
+
+#helpscreen{
+    display:none;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(180deg, #0D150C, yellow);
+}
+
+#backBtn{
+    text-align: center;
+    padding: 20px;
+    font-size: 40;
+    color: white;
+    background-color: #ff0000;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    border: 5px solid #ff0000;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}
+
+#backBtn:hover{
+    background-color: #FF69B4;
+    border: 5px solid #FF69B4;
+    transform: rotate(360deg);
+    cursor: pointer;
+    transition: 0.2s
+}
+
+#backstory{
+    text-align: center;
+    font-size: 40;
+    padding-top: 200px;
+}
+
+#chooseCave{
+    width: 100%;
+    height: 100%;
+    background-image : url("assets/branchedCaves.jpg");
+    background-repeat : no-repeat;
+    background-size : 100% 100%;
+    display : none
+}
+
+#warning{
+    color : #ff0000;
+    width : 100%;
+    height : 100%;
+    background-color : #000;
+    justify-content : center;
+    text-align : center;
+    position: relative;
+}
+
+#warning h1{
+    padding-top : 200px;
+    padding-bottom:100px;
+}
+
+#understand{
+    color: #fff;
+    border: solid 5px #fff;
+    border-radius:20px;
+    padding: 50px;
+    width: 200px;
+    margin: auto;
+    margin-top: 200px;
+    opacity: 0%;
+    animation: warningAnimaiton 1s 5s forwards;
+}
+
+@keyframes warningAnimaiton{
+    100%{
+        opacity: 100%;
+    }
+}
+
+#understand:hover{
+    cursor : pointer;
+}
+
+#light{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    background: radial-gradient(circle at var(--x) var(--y), transparent 10%, rgba(0,0,0,0.95) 20%);
+}
+
+#objective{
+    color: #ffffff;
+    text-align: center;
+    font-size: 40px;
+    position: relative;
+    top:90%
+}
+
+.caveOption{
+    width:50%;
+    height: 100%;
+    float: left;
+    cursor: pointer;
+}
+
+#hopeYoureRight{
+    width:100%;
+    height:100%;
+    background-color: #000;
+    text-align:center;
+    display:none;
+}
+
+.anxietyTxt{
+    color:#fff;
+    font-weight: bold;
+    font-size:200%;
+    top:30%;
+    position:relative;
+    display:none;
+}
+
+#oogaBooga{
+    display:none;
+    width: 100%;
+    height: 100%;
+    background-image : url("assets/itsTheDragon.png");
+    background-repeat : no-repeat;
+    background-size : 100% 100%;
+    animation : jumpscareAnimation 2s infinite;
+}
+
+#youLost{
+    display:none;
+    background-color: #000;
+    width:100%;
+    height:100%;
+    color: #fff;
+    text-align:center;
+    font-size: 200%;
+}
+
+#youLost h2{
+    position:relative;
+    top:30%
+}
+
+#youLost div{
+    position:relative;
+    top:30%
+}
+
+#payDay{
+    display:none;
+    width: 100%;
+    height: 100%;
+    background-image : url("assets/goldRoom.png");
+    background-repeat : no-repeat;
+    background-size : 100% 100%;
+}
+
+#youWin{
+    display:none;
+    background-color: #000;
+    width:100%;
+    height:100%;
+    color: #fff;
+    text-align:center;
+    font-size: 200%;
+}
+
+#youWin h2{
+    position:relative;
+    top:30%
+}
+
+#youWin div{
+    position:relative;
+    top:30%
+}
+
+#tryAgain{
+    color: #fff;
+    border: solid 5px #fff;
+    border-radius:20px;
+    padding: 50px;
+    width: 200px;
+    margin: auto;
+    margin-top: 200px;
+}
+
+#tryAgain:hover{
+    cursor:pointer;
+}
+
+#playAgain{
+    color: #fff;
+    border: solid 5px #fff;
+    border-radius:20px;
+    padding: 50px;
+    width: 200px;
+    margin: auto;
+    margin-top: 200px;
+}
+
+#playAgain:hover{
+    cursor:pointer;
+}
+
+@keyframes anxietyAnimation{
+    0%{
+        transform: translateY(1000%)
+    }
+    30%{
+        transform:translateY(40%)
+    }
+    70%{
+        transform:translateY(60%)
+    }
+    100%{
+        transform:translateY(-10000%)
+    }
+}
+
+@keyframes jumpscareAnimation{
+    10%{
+        transform:rotate(10deg);
+        transform:scale(1.5)
+    }
+    20%{
+        transform:rotate(-10deg);
+        transform:scale(1.3);
+    }
+    50%{
+        transform:rotate(0deg);
+        transform:scale(1.7);
+    }
+    100%{transform:scale(1.2)};
 }
